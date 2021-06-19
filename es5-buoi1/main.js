@@ -15,6 +15,12 @@ console.log("Hello World!!");
 - không được đặt trùng với các từ khóa của js, ví dụ như if else function var let const
 - hằng số là const, nó sẽ không bao giờ thay đổi, ngay cả gán giá trị khác, và nên đặt tên IN_HOA
 
+* HOISTING:
+- Hoistring là cơ chế đẩy một biến được khai báo lên trên cùng scope chứa nó 
+=> nó có thể truy cập được biến trước khi nó được khai báo.
+
+- Đối với biến: hoistring chỉ xảy ra với từ khóa var
+- Đối với function: hoistring chỉ xảy ra với declare function
 */
 
 // string
@@ -70,6 +76,9 @@ if(trafficLight == 'green') {
     console.log('No power!!');
 }
 
+//  Ternary operator (toán tử 3 ngôi)
+1 === 2 ? console.log("đúng") : console.log("sai");
+
 // Phép so sánh
 console.log(3 == '3');
 console.log(3 === '3');
@@ -114,5 +123,54 @@ const b = -2;
 var result = (a < 0 || b);
 console.log(result);
 
+function sayHello(){
+    console.log("Hello");
+}
 
+//  Expression function
 
+var _sayHello = function(name) {
+    console.log("Hello " + name)
+}
+
+_sayHello("Sang");
+
+// Hoistring
+
+var demoHoistring = 'hoistring';
+console.log(demoHoistring);
+
+// console.log(hoistringConst); => toang
+const hoistringConst = 'hoistring';
+
+/**
+ * BT1: Tính điểm TB sinh viên và xếp loại SV
+ */
+
+var tinhDiemTB = function(dToan, dLy, dHoa) {
+    var dtb = (dToan + dLy + dHoa) / 3;
+    return dtb;
+}
+
+var xepLoai = function() {
+    var dtb = tinhDiemTB(8, 8, 8);
+    var xepLoai = '';
+
+    if (dtb >= 9 && dtb <= 10) {
+        xepLoai = 'Xuất sắc';
+    } else if (dtb >= 8 && dtb < 9) {
+        xepLoai = 'Giỏi';
+    } else if (dtb < 8 && dtb >= 7) {
+        xepLoai = 'Khá';
+    } else if (dtb < 7 && dtb >= 6) {
+        xepLoai = 'Trung Bình Khá';
+    } else if (dtb < 6 && dtb >= 5) {
+        xepLoai = 'Trung Bình';
+    } else {
+        xepLoai = 'Ăn cứt ăn bầu đuồi';
+    }
+    
+    console.log('Xếp loại: ' + xepLoai);
+}
+
+xepLoai();
