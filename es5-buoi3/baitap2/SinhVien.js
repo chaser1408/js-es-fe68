@@ -1,6 +1,6 @@
 // Lớp đối tượng: constructor function
 function SinhVien(_ma, _ten, _email, _matKhau, _ngaySinh, _khoaHoc, _dToan, _dLy, _dHoa) {
-    
+
     this.ma = _ma;
     this.ten = _ten;
     this.email = _email;
@@ -11,13 +11,28 @@ function SinhVien(_ma, _ten, _email, _matKhau, _ngaySinh, _khoaHoc, _dToan, _dLy
     this.diemLy = _dLy;
     this.diemHoa = _dHoa;
 
-    this.tinhDTB = function() {
-        return (parseFloat(this.diemToan) + parseFloat(this.diemLy) + parseFloat(this.diemHoa) / 3 );
+    this.tinhDTB = function () {
+        return (parseFloat(this.diemToan) + parseFloat(this.diemLy) + parseFloat(this.diemHoa) / 3);
     }
 }
 
-var sv1 = new SinhVien('SV1', 'Sang', 'tpsang.1408@gmail.com', '12345', '14/08', 'FE68', 4, 5, 6);
-console.log(sv1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Cách thức hoạt động của toán tử new

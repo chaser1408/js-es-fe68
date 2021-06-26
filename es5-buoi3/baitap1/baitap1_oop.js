@@ -1,8 +1,8 @@
-var getEle = function(id) {
+var getEle = function (id) {
     return document.getElementById(id);
 }
 
-var hienThiThongTin = function() {
+var hienThiThongTin = function () {
     var _tenSV = getEle('txtTenSV').value;
     var _maSV = getEle('txtMaSV').value;
     var _hoanCanh = getEle('loaiSV').value;
@@ -10,9 +10,9 @@ var hienThiThongTin = function() {
     var _diemVan = getEle('txtDiemVan').value;
 
 
-/**
- * Khởi tạo đối tượng sinhVien
- */
+    /**
+     * Khởi tạo đối tượng sinhVien
+     */
     var sinhVien = {
         maSV: _maSV,
         tenSV: _tenSV,
@@ -21,25 +21,25 @@ var hienThiThongTin = function() {
         diemVan: _diemVan,
 
         tinhDTB() {
-            return (parseFloat(this.diemToan) + parseFloat(this.diemVan)) / 2;
+            return parseFloat(parseFloat(this.diemToan) + parseFloat(this.diemVan)) / 2;
         },
 
         xepLoai(dtb) {
             var loai = '';
 
-            if(dtb >= 8 && dtb <= 10){
+            if (dtb >= 8 && dtb <= 10) {
                 loai = 'Giỏi';
             }
-            else if(dtb >= 6.5 && dtb < 8){
+            else if (dtb >= 6.5 && dtb < 8) {
                 loai = 'Khá';
             }
-            else if(dtb >= 5 && dtb < 6.5){
+            else if (dtb >= 5 && dtb < 6.5) {
                 loai = 'Trung bình';
             }
-            else{
+            else {
                 loai = 'Yếu';
             }
-        
+
             return loai;
         },
     };

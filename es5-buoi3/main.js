@@ -15,7 +15,7 @@ var person = {
     country: 'Viet Nam',
 
     // methods
-    greeting: function() {
+    greeting: function () {
         return 'Hello!';
     }
 }
@@ -56,11 +56,11 @@ var employee = {
     email: 'tpsang.1408@gmail.com',
 
     // Phương thức
-    tinhLuong: function() {
-        
+    tinhLuong: function () {
+
     },
 
-    tinhGioLam: function() {
+    tinhGioLam: function () {
 
     },
 
