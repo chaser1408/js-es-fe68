@@ -1,25 +1,45 @@
 function DanhSachNhanVien() {
     this.arr = [];
+};
 
-    this.themNhanVien = function (NhanVien) {
-        this.arr.push(NhanVien);
-    }
+DanhSachNhanVien.prototype.themNhanVien = function (nhanVien) {
+    this.arr.push(nhanVien);
+};
 
-    this.xoaNhanVien = function (maNV) {
-        var viTri = this.timViTri(maNV);
-        if (viTri !== -1) {
-            this.arr.splice(viTri, 1);
-        }
-    }
+DanhSachNhanVien.prototype.timViTri = function (maNV) {
+    /**
+ * findIndex:
+ * TÌM THẤY THÌ TRẢ VỀ INDEX
+ * KO TÌM THẤY SẼ TRẢ VỀ -1
+ */
 
-    this.timViTri = function (maNV) {
-        /**
-         * findIndex:
-         * TÌM THẤY THÌ TRẢ VỀ INDEX
-         * KO TÌM THẤY SẼ TRẢ VỀ -1
-         */
-        return this.arr.findIndex(function (nv) {
-            return maNV === nv.maNV;
-        })
+    return this.arr.findIndex(function (nv) {
+        return maNV === nv.maNV;
+    })
+};
+
+DanhSachNhanVien.prototype.xoaNhanVien = function (maNV) {
+    var viTri = this.timViTri(maNV);
+    if (viTri !== -1) {
+        this.arr.splice(viTri, 1);
     }
-}
+};
+
+DanhSachNhanVien.prototype.layThongTinNhanVien = function (maNV) {
+    var viTri = this.timViTri(maNV);
+
+    if (viTri !== -1) return this.arr[viTri];
+};
+
+DanhSachNhanVien.prototype.capNhatNhanVien = function (nhanVien) {
+    var viTri = this.timViTri(nhanVien.maNV);
+    if (viTri != -1) {
+        this.arr[viTri] = nhanVien;
+    }
+};
+
+DanhSachNhanVien.prototype.timKiemNhanVien = function (keyword) {
+    return this.arr.filter(function (nv) {
+        return nv.hoTen.toLowerCase().indexOf(keyword.toLowerCase()) !== -1;
+    });
+};

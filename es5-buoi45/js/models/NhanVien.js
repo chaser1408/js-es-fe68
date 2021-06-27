@@ -5,4 +5,4 @@ function NhanVien(_maNV, _hoTen, _email, _matKhau, _ngaySinh, _chucVu) {
     this.matKhau = _matKhau;
     this.ngaySinh = _ngaySinh;
     this.chucVu = _chucVu;
-}
+};
